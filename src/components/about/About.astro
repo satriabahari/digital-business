@@ -1,0 +1,12 @@
+---
+import {ABOUT} from '../../common/constants/about'
+import Container from '../elements/Container.astro'
+import PageHeading from '../elements/PageHeading.astro'
+---
+
+<Container className='flex flex-col justify-center items-center gap-y-4'>
+  <PageHeading>About</PageHeading>
+  {ABOUT.map((item) => (
+    <p class="text-neutral-50 text-center">{item}</p>
+  ))}
+</Container>
