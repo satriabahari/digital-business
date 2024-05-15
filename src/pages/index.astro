@@ -1,9 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Home from '../components/home/Home.astro';
+import About from '../components/about/About.astro';
+import '@/styles/globals.css'
+import { Button } from "@/components/ui/button"
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<p class="">Test</p>
-	</main>
+<script>
+import { useState } from "react";
+
+	const [count, setCount] = useState(0);
+</script>
+
+<Layout title="Digital Business | Satria Bahari">
+	<Home/>
+	<About/>
+	<Button variant='secondary'>Hello World</Button>
 </Layout>
