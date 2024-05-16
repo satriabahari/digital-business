@@ -1,0 +1,95 @@
+---
+import Container from "../elements/Container.astro";
+import PageHeading from "../elements/PageHeading.astro";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card";
+import { FaCircleCheck } from "react-icons/fa6";
+import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils";
+
+const COURSES = [
+  {
+    price: 79,
+    label: 'Core',
+    title: 'Most popular plan',
+    benefits:[
+      'All stater features',
+      '1TB Additional storages',
+      'Unlimited projects',
+      'Analytic'
+    ],
+  },
+  {
+    price: 79,
+    label: 'Overdrive',
+    title: 'Most popular plan',
+    benefits:[
+      'All stater features',
+      '1TB Additional storages',
+      'Unlimited projects',
+      'Analytic'
+    ],
+    promotion: 'Limited time offer'
+  },
+  {
+    price: 79,
+    label: 'Team',
+    title: 'Most popular plan',
+    benefits:[
+      'All stater features',
+      '1TB Additional storages',
+      'Unlimited projects',
+      'Analytic'
+    ]
+  },
+]
+---
+
+<Container className='flex flex-col justify-center items-center gap-y-16'>
+  <PageHeading>Courses</PageHeading>
+  <div class="grid lg:grid-cols-2 grid-cols-1 relative items-center gap-x-72 gap-y-12 w-full">
+  {COURSES.map((course, index) => (
+
+    <Card className={cn("relative flex flex-col justify-center items-center text-center border-[1.5px] dark:border-neutral-200 rounded-3xl", index === 1 && "lg:absolute -translate-x-1/2 left-1/2 z-10 lg:w-[350px]")}>
+      <div class="rounded-full border-neutral-200 border-[1.5px] p-1 bg-neutral-800 w-fit absolute -top-4 left-1/2 -translate-x-1/2">
+        <div class="bg-neutral-700 rounded-full p-3">
+          <FaCircleCheck size={25}/>
+        </div>
+      </div>
+      <CardHeader className={cn("mt-11 flex items-center", index !== 1 && "border-b-[1.5px] border-neutral-800")}>
+        <div class="border-neutral-500 border-[1.5px] rounded-full py-1 mb-4 text-[10px] uppercase font-medium tracking-[3px] w-fit px-3 ">
+          {course.label}
+        </div>
+        <CardTitle className="text-5xl font-bold">
+          ${course.price}
+        </CardTitle>
+        <CardDescription>
+          {course.title}
+        </CardDescription>
+      </CardHeader>
+      <CardContent className={cn(" w-full p-8 flex justify-center", index === 1 && 'dark:bg-neutral-800' )}>
+        <ul class="space-y-2">
+          {course.benefits.map((benefit) => (
+            <li class="flex gap-x-4 items-center">
+              <div class="rounded-lg p-1.5 bg-neutral-700 w-fit"><FaCircleCheck size={12}/></div>
+              <p class="text-sm">{benefit}</p>
+            </li>
+          ))}
+        </ul>
+      </CardContent>
+      <CardFooter  className={cn(" w-full flex justify-center", index === 1 && 'dark:bg-neutral-800 flex flex-col gap-y-4 rounded-b-3xl' )}>
+        <Button className="dark:bg-neutral-700 space-x-3 rounded-lg px-3">
+          <div class="bg-neutral-900 rounded-md p-1">
+            <FaCircleCheck size={13} className="text-neutral-50"/>
+          </div>
+          <p class="dark:text-neutral-50 font-semibold text-xs">GET STARTED</p>
+        </Button>
+        {course.promotion && (
+          <p class="text-xs font-medium">
+            - {course.promotion} - 
+          </p>
+        )}
+      </CardFooter>
+    </Card>
+  ))}
+  </div>
+</Container>
