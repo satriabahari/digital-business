@@ -1,0 +1,12 @@
+---
+import FAQS from "@/common/constants/faqs";
+import Container from "../elements/Container.astro";
+import PageHeading from "../elements/PageHeading.astro";
+import FaqList from './FaqList.tsx'
+
+---
+
+<Container>
+  <PageHeading>Faq</PageHeading>
+  <FaqList faqs={FAQS} client:idle/>
+</Container>
