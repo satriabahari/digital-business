@@ -6,7 +6,6 @@ import {
 } from "react-icons/bs";
 import { SiGmail } from "react-icons/si";
 
-
 const iconSize = 20;
 
 export const SOCIAL_MEDIA = [
