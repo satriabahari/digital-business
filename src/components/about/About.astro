@@ -1,12 +1,30 @@
 ---
-import {ABOUT} from '../../common/constants/about'
 import Container from '../elements/Container.astro'
 import PageHeading from '../elements/PageHeading.astro'
+import {
+  Card,
+  CardContent,
+} from "@/components/ui/card"
+import { Moon, Sun } from "lucide-react"
+import { SiAlacritty } from "react-icons/si";
+import ABOUT from '@/common/constants/about'
 ---
 
 <Container className='flex flex-col justify-center items-center gap-y-4'>
   <PageHeading>About</PageHeading>
-  {ABOUT.map((item) => (
-    <p class="text-neutral-50 text-center">{item}</p>
-  ))}
+  <div class="grid lg:grid-cols-3 grid-cols-1 gap-4">
+  {ABOUT.map((item) => {
+    return(
+    <Card className='rounded-xl'>
+      <CardContent className='pt-6 border-[1.5px] dark:border-neutral-50 rounded-3xl'>
+        <div class="p-3 dark:bg-neutral-600 drop-shadow w-fit rounded-xl">
+          <Moon/>
+        </div>
+        <h4 class="mt-8 font-semibold italic">{item.title}</h4>
+        <p class="mt-2 italic text-sm dark:text-neutral-400">{item.description}</p>
+      </CardContent>
+    </Card>
+
+  )})}
+  </div>
 </Container>

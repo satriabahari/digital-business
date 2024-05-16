@@ -2,18 +2,34 @@
 import Layout from '../layouts/Layout.astro';
 import Home from '../components/home/Home.astro';
 import About from '../components/about/About.astro';
+import Courses from '../components/courses/Courses.astro';
+import Faq from '../components/faq/Faq.astro'
 import '@/styles/globals.css'
-import { Button } from "@/components/ui/button"
+
 ---
 
-<script>
-import { useState } from "react";
+<script is:inline>
+	const getThemePreference = () => {
+		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+			return localStorage.getItem('theme');
+		}
+		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+	};
+	const isDark = getThemePreference() === 'dark';
+	document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
 
-	const [count, setCount] = useState(0);
+	if (typeof localStorage !== 'undefined') {
+		const observer = new MutationObserver(() => {
+			const isDark = document.documentElement.classList.contains('dark');
+			localStorage.setItem('theme', isDark ? 'dark' : 'light');
+		});
+		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+	}
 </script>
 
 <Layout title="Digital Business | Satria Bahari">
 	<Home/>
 	<About/>
-	<Button variant='secondary'>Hello World</Button>
+	<Courses/>
+	<Faq/>
 </Layout>
