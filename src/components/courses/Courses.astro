@@ -44,14 +44,14 @@ const COURSES = [
 ]
 ---
 
-<Container className='flex flex-col justify-center items-center gap-y-16'>
+<Container id="courses" className='flex flex-col justify-center items-center gap-y-16'>
   <PageHeading>Courses</PageHeading>
   <div class="grid lg:grid-cols-2 grid-cols-1 relative items-center gap-x-72 gap-y-12 w-full">
   {COURSES.map((course, index) => (
 
-    <Card className={cn("relative flex flex-col justify-center items-center text-center border-[1.5px] dark:border-neutral-200 rounded-3xl", index === 1 && "lg:absolute -translate-x-1/2 left-1/2 z-10 lg:w-[350px]")}>
+    <Card className={cn("relative flex flex-col justify-center items-center text-center border-[1.5px] dark:bg-neutral-800 dark:border-neutral-200 rounded-3xl", index === 1 && "lg:absolute -translate-x-1/2 left-1/2 z-10 lg:w-[350px]")}>
       <div class="rounded-full border-neutral-200 border-[1.5px] p-1 bg-neutral-800 w-fit absolute -top-4 left-1/2 -translate-x-1/2">
-        <div class="bg-neutral-700 rounded-full p-3">
+        <div class="bg-neutral-700 rounded-full p-3 text-neutral-50">
           <FaCircleCheck size={25}/>
         </div>
       </div>
@@ -66,17 +66,17 @@ const COURSES = [
           {course.title}
         </CardDescription>
       </CardHeader>
-      <CardContent className={cn(" w-full p-8 flex justify-center", index === 1 && 'dark:bg-neutral-800' )}>
+      <CardContent className={cn(" w-full p-8 flex justify-center", index === 1 && 'dark:bg-neutral-700 bg-neutral-200' )}>
         <ul class="space-y-2">
           {course.benefits.map((benefit) => (
             <li class="flex gap-x-4 items-center">
-              <div class="rounded-lg p-1.5 bg-neutral-700 w-fit"><FaCircleCheck size={12}/></div>
+              <div class="rounded-lg p-1.5 bg-neutral-700 w-fit text-neutral-50"><FaCircleCheck size={12}/></div>
               <p class="text-sm">{benefit}</p>
             </li>
           ))}
         </ul>
       </CardContent>
-      <CardFooter  className={cn(" w-full flex justify-center", index === 1 && 'dark:bg-neutral-800 flex flex-col gap-y-4 rounded-b-3xl' )}>
+      <CardFooter  className={cn(" w-full flex justify-center", index === 1 && 'dark:bg-neutral-700 bg-neutral-200 flex flex-col gap-y-4 rounded-b-3xl' )}>
         <Button className="dark:bg-neutral-700 space-x-3 rounded-lg px-3">
           <div class="bg-neutral-900 rounded-md p-1">
             <FaCircleCheck size={13} className="text-neutral-50"/>

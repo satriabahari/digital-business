@@ -1,21 +1,31 @@
 export const MENUS = [
   {
-    name: "Home",
-    href: "/",
+    title: "Home",
+    href: "#",
     isShow: true,
   },
   {
-    name: "About",
+    title: "About",
     href: "#about",
     isShow: true,
   },
   {
-    name: "Courses",
+    title: "Courses",
     href: "#courses",
     isShow: true,
   },
   {
-    name: "Contact",
+    title: "Testimonials",
+    href: "#testimonials",
+    isShow: true,
+  },
+  {
+    title: "Faq",
+    href: "#faq",
+    isShow: true,
+  },
+  {
+    title: "Contact",
     href: "#contact",
     isShow: true,
   },

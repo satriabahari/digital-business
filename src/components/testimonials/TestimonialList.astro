@@ -1,0 +1,12 @@
+---
+import TESTIMONIALS from "@/common/constants/tesimonials";
+import TestimonialCard from "./TestimonialCard";
+---
+
+<div class="grid lg:grid-cols-3 grid-cols-1 gap-4">
+  {TESTIMONIALS.map((testimonial) => {
+    return (
+      <TestimonialCard {...testimonial}/>
+    )
+  })}
+</div>

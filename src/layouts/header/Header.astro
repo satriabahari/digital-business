@@ -1,13 +1,10 @@
 ---
-import MenuItemList from "./MenuItemList.astro";
-import MobileMenu from "./MobileMenu.astro";
-
+import MobileMenu from "./MobileMenu.tsx"
+import Navbar from "./Navbar.astro";
 
 ---
 
-<header class="bg-neutral-700 py-2">
-  <div class="lg:hidden">
-    <MobileMenu/>
-  </div>
-  <MenuItemList/>
+<header class="w-full">
+  <MobileMenu client:idle/>
+  <Navbar client:idle/>
 </header>

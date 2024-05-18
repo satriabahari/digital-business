@@ -10,7 +10,7 @@ import Header from './header/Header.astro';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="!scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -19,12 +19,12 @@ import Header from './header/Header.astro';
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="bg-neutral-900">
-		<!-- <Header/> -->
+	<body class="bg-neutral-100 dark:bg-neutral-900" >
+		<Header/>
 		<main class="p-8 lg:px-28">
 			<slot />
 		</main>
-		<!-- <Footer/> -->
+		<Footer/>
 	</body>
 </html>
 <style is:global>

@@ -23,22 +23,29 @@ const FaqList = ({ faqs }: FaqListProps) => {
     isActive === id ? setIsActive(-1) : setIsActive(id);
   };
   return (
-    <Accordion type="single" collapsible className="w-full ">
+    <Accordion
+      type="single"
+      collapsible
+      className="w-full grid grid-cols-1 lg:grid-cols-2"
+    >
       {faqs.map((faq, index) => (
         <AccordionItem
+          key={index}
           value={`item-${index}`}
           className={cn(
-            " px-4 rounded-xl border-none",
-            isActive === index && "bg-neutral-600"
+            " px-4 border",
+            isActive === index && "dark:bg-neutral-800 bg-white"
           )}
         >
           <AccordionTrigger
-            className="text-neutral-50"
+            className="dark:text-neutral-50 text-neutral-900 text-lg"
             onClick={() => handleClick(index)}
           >
             {faq.question}
           </AccordionTrigger>
-          <AccordionContent className="dark:text-neutral-400">{faq.answer}</AccordionContent>
+          <AccordionContent className="dark:text-neutral-400">
+            {faq.answer}
+          </AccordionContent>
         </AccordionItem>
       ))}
     </Accordion>
