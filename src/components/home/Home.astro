@@ -1,10 +1,25 @@
 ---
-import Container from "../elements/Container.astro";
+import Container from "../elements/Container.tsx";
 ---
 
-<Container className="flex flex-col justify-center text-center items-center">
-  <h1 class="text-4xl font-bold tracking-tight dark:text-neutral-50">Taxing Laughter: The Joke Tax Chronicles</h1>
-  
-  <p class="leading-5 dark:text-neutral-50 [&:not(:first-child)]:mt-6">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum aut, accusantium vitae quisquam nobis quaerat?</p>
+<Container
+  client:idle
+  id="home"
+  data-aos="fade-up"
+  isScreen
+  className="flex w-full flex-col items-center justify-center text-center lg:px-32"
+>
+  <div class="gradient"></div>
+  <h1 class="text-4xl font-bold tracking-tight dark:text-neutral-50 lg:text-6xl">
+    Selamat Datang di Kursus <span
+      class="to-75 from-25% bg-clip-text text-transparent dark:bg-gradient-to-r dark:from-purple-500 dark:to-sky-500"
+      >Coding Online</span
+    > Terbaik
+  </h1>
+
+  <p class="px-12 leading-5 dark:text-neutral-50 lg:px-24 lg:text-lg [&:not(:first-child)]:mt-6">
+    Tingkatkan keterampilan coding Anda bersama instruktur berpengalaman dan kurikulum berkualitas. Belajar kapan saja
+    dan di mana saja sesuai kecepatan Anda sendiri.
+  </p>
   <p></p>
 </Container>
