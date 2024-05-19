@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.gradient {
+  @apply absolute -z-10 h-52 w-52 rounded-full bg-gradient-to-b from-blue-600 to-blue-500 blur-[15rem];
+}
