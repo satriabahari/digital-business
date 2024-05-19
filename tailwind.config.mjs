@@ -26,6 +26,14 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      colors: {
+        "dark-primary": "#00111c",
+        "dark-secondary": "#006494",
+        "dark-tertiary": "#002137",
+        primary: "#00406c",
+        secondary: "#003a61",
+        tertiary: '#003356'
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
