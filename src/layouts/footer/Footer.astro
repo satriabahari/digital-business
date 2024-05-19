@@ -1,56 +1,58 @@
 ---
+import { Icon } from "astro-icon/components";
+
 import { MENUS } from "@/common/constants/menu";
-import { Moon } from "lucide-react";
-
-const SOSMEDS = [
-  {
-    name: 'Github',
-    link: 'https://github.com/satriabahari',
-  },
-  {
-    name: 'Github',
-    link: 'https://github.com/satriabahari',
-  },
-  {
-    name: 'Github',
-    link: 'https://github.com/satriabahari',
-  },
-  {
-    name: 'Github',
-    link: 'https://github.com/satriabahari',
-  },
-]
-
+import SOSMEDS from "@/common/constants/sosmeds";
 ---
 
-<footer id="contact" class="bg-white  py-8 grid lg:grid-cols-2 grid-cols-1 lg:px-28 px-12 min-h-96 space-y-8 dark:bg-neutral-800">
-  <div class="flex flex-col justify-between text-center lg:text-left space-y-4">
-    <div class="flex flex-col gap-y-4 justify-between ">
-    {MENUS.map((menu) => (
-      <a href={menu.href} class="text-neutral-800 dark:text-neutral-50 dark:hover:text-neutral-50 font-medium text-lg">{menu.title}</a>
-    ))}
+<footer
+  id="contact"
+  class="grid min-h-96 grid-cols-1 space-y-8 bg-white px-12 py-8 dark:bg-dark-tertiary lg:grid-cols-2 lg:px-28"
+>
+  <div class="flex flex-col justify-between space-y-4 text-center lg:text-left">
+    <div class="flex flex-col justify-between gap-y-4">
+      {
+        MENUS.map((menu) => (
+          <a
+            href={menu.href}
+            class="text-lg font-medium text-neutral-800 dark:text-neutral-50 dark:hover:text-neutral-50"
+          >
+            {menu.title}
+          </a>
+        ))
+      }
     </div>
-    <span class="text-neutral-500 text-sm">© Copyright 2023</span>
+    <span class="text-sm text-neutral-500">© Copyright 2023</span>
   </div>
-  <div class="px-8 justify-between flex flex-col text-center lg:text-start items-center lg:items-start space-y-6">
-    <div class="space-y-3">
-      <h2 class="text-3xl font-semibold dark:text-neutral-50 text-neutral-900">Subscribe</h2>
-      <p class="lg:w-3/4 dark:text-neutral-200 text-neutral-700">Sign up to our newsletter for feature updates and our undying love.</p>
-      <div class="border-[1.5px] border-neutral-400 bg-neutral-200 dark:bg-neutral-600 rounded-xl flex items-center w-fit px-4 py-1">
-        <input type="text" placeholder="youremail@gmail.com" class="px-2 dark:bg-neutral-600 dark:text-neutral-50 bg-neutral-200 outline-none"/>
-        <button class="border-[1.5px] border-neutral-300 rounded-xl p-1 dark:text-neutral-50">
-          <Moon/>
+  <div class="flex flex-col items-center justify-between space-y-6 px-8 text-center lg:items-start lg:text-start">
+    <div class="flex flex-col items-center space-y-3 lg:items-start">
+      <h2 class="text-3xl font-semibold text-neutral-900 dark:text-neutral-50">Subscribe</h2>
+      <p class="text-neutral-700 dark:text-neutral-200 lg:w-3/4">
+        Sign up to our newsletter for feature updates and our undying love.
+      </p>
+      <div
+        class="flex w-fit items-center justify-center rounded-xl border-[1.5px] border-neutral-400 bg-neutral-200 px-4 py-1 dark:border-primary dark:bg-secondary"
+      >
+        <input
+          type="text"
+          placeholder="youremail@gmail.com"
+          class="bg-neutral-200 px-2 outline-none dark:bg-secondary dark:text-neutral-50"
+        />
+        <button class="rounded-lg border-[1.5px] border-neutral-300 p-1 dark:border-primary dark:text-neutral-50">
+          <Icon name="arrow" />
         </button>
       </div>
     </div>
     <div class="flex gap-x-3">
-      {SOSMEDS.map((sosmed) => (
-        <a href={sosmed.link}>
-        <div class="bg-neutral-200 rounded-full p-2 border-[1.5px] border-neutral-400 dark:bg-neutral-600 dark:text-neutral-50">
-          <Moon/>
-        </div>
-        </a>
-      ))}
+      {
+        SOSMEDS.map((sosmed) => (
+          <a href={sosmed.href}>
+            <div class="rounded-full border-[1.5px] border-neutral-400 bg-neutral-200 p-2 dark:border-primary dark:bg-secondary dark:text-neutral-50">
+              <Icon name={sosmed.icon} />
+            </div>
+          </a>
+        ))
+      }
     </div>
   </div>
 </footer>
