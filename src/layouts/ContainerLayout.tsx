@@ -14,7 +14,7 @@ const ContainerLayout = ({ children }: ContainerLayoutProps) => {
       once: true,
       offset: 200,
     });
-  });
+  }, []);
   return <div>{children}</div>;
 };
 

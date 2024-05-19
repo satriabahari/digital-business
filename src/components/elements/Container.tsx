@@ -1,10 +1,8 @@
-"use client";
-
 import { useEffect } from "react";
 
-import useIsIntersectionObserver from "@/common/hooks/useIntersectionObserver";
-import { useMenu } from "@/common/stores/menu";
-import { cn } from "@/lib/utils";
+import useIsIntersectionObserver from "../../common/hooks/useIntersectionObserver";
+import { useMenu } from "../../common/stores/menu";
+import { cn } from "../../lib/utils";
 
 interface ContainerProps {
   id: string;

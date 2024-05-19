@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { cn } from "@/lib/utils";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import { cn } from "../../lib/utils";
 
 interface FaqListProps {
   faqs: {
@@ -22,7 +22,7 @@ const FaqList = ({ faqs }: FaqListProps) => {
           key={index}
           value={`item-${index}`}
           className={cn(
-            "hover:scale-[1.03] duration-300 transition rounded-xl border px-4 dark:border-primary dark:bg-dark-tertiary",
+            "rounded-xl border px-4 transition duration-300 hover:scale-[1.03] dark:border-primary dark:bg-dark-tertiary",
             isActive === index && "bg-white dark:bg-secondary",
           )}
         >

@@ -1,5 +1,5 @@
-import { cn } from "@/lib/utils.ts";
-import type { TestimonialProps } from "@/common/types/testimonial.ts";
+import { cn } from "../../lib/utils.ts";
+import type { TestimonialProps } from "../../common/types/testimonial.ts";
 
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "../ui/card.tsx";
 
