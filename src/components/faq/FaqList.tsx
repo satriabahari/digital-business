@@ -1,13 +1,6 @@
-import FAQS from "@/common/constants/faqs";
-import Container from "../elements/Container.astro";
-import PageHeading from "../elements/PageHeading.astro";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { useState } from "react";
+
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 
 interface FaqListProps {
@@ -23,29 +16,23 @@ const FaqList = ({ faqs }: FaqListProps) => {
     isActive === id ? setIsActive(-1) : setIsActive(id);
   };
   return (
-    <Accordion
-      type="single"
-      collapsible
-      className="w-full grid grid-cols-1 lg:grid-cols-2"
-    >
+    <Accordion type="single" collapsible className="grid w-full grid-cols-1 gap-4 lg:grid-cols-2">
       {faqs.map((faq, index) => (
         <AccordionItem
           key={index}
           value={`item-${index}`}
           className={cn(
-            " px-4 border",
-            isActive === index && "dark:bg-neutral-800 bg-white"
+            " rounded-xl border px-4 dark:border-primary dark:bg-dark-tertiary",
+            isActive === index && "bg-white dark:bg-secondary",
           )}
         >
           <AccordionTrigger
-            className="dark:text-neutral-50 text-neutral-900 text-lg"
+            className="text-left text-lg text-neutral-900 dark:text-neutral-50"
             onClick={() => handleClick(index)}
           >
             {faq.question}
           </AccordionTrigger>
-          <AccordionContent className="dark:text-neutral-400">
-            {faq.answer}
-          </AccordionContent>
+          <AccordionContent className="dark:text-neutral-400">{faq.answer}</AccordionContent>
         </AccordionItem>
       ))}
     </Accordion>
