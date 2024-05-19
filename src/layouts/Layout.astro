@@ -1,32 +1,30 @@
 ---
-interface Props {
-	title: string;
-}
+import "aos/dist/aos.css";
+
+import Footer from "./footer/Footer.astro";
+import Header from "./header/Header.astro";
+import ContainerLayout from "./ContainerLayout";
 
 const { title } = Astro.props;
-
-import Footer from './footer/Footer.astro';
-import Header from './header/Header.astro';
 ---
 
 <!doctype html>
 <html lang="en" class="!scroll-smooth">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class="bg-neutral-100 dark:bg-neutral-900" >
-		<Header/>
-		<main class="p-8 lg:px-28">
-			<slot />
-		</main>
-		<Footer/>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-neutral-100 dark:bg-dark-primary">
+    <ContainerLayout client:load>
+      <Header />
+      <main class="px-8 lg:px-28">
+        <slot />
+      </main>
+      <Footer />
+    </ContainerLayout>
+  </body>
 </html>
-<style is:global>
-	
-</style>
