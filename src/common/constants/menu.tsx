@@ -1,4 +1,6 @@
-export const MENUS = [
+import type { MenuProps } from "../types/menu";
+
+export const MENUS: MenuProps[] = [
   {
     title: "Home",
     href: "#",

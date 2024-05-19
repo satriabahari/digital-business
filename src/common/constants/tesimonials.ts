@@ -1,54 +1,54 @@
-const TESTIMONIALS = [
+import type { TestimonialProps } from "../types/testimonial";
+
+const TESTIMONIALS: TestimonialProps[] = [
   {
-    name: "Andi Pratama",
-    course: "Belajar Pemrograman JavaScript",
-    testimonial: "Kursus ini sangat membantu saya memahami dasar-dasar JavaScript. Instruktur menjelaskan materi dengan sangat jelas dan praktis.",
+    course: "Kursus Pemrograman Dasar",
+    testimonial:
+      "Kursus ini sangat membantu saya memahami dasar-dasar pemrograman. Instruktur sangat ramah dan penjelasannya mudah dipahami.",
     rating: 5,
-    date: "2024-05-10"
-  },
-  {
     name: "Budi Santoso",
-    course: "Desain Web Responsif",
-    testimonial: "Saya sangat senang mengikuti kursus ini. Materinya sangat relevan dan langsung bisa diterapkan dalam proyek saya.",
-    rating: 4,
-    date: "2024-05-12"
   },
   {
-    name: "Citra Dewi",
-    course: "Analisis Data dengan Python",
-    testimonial: "Instruktur sangat berpengalaman dan memberikan banyak contoh nyata yang membantu saya memahami konsep analisis data dengan lebih baik.",
+    course: "Kursus Pemrograman Web",
+    testimonial: "Sekarang saya bisa membuat website sendiri! Materi kursus sangat lengkap dan mendetail.",
+    rating: 4,
+    name: "Siti Aminah",
+  },
+  {
+    course: "Kursus Pemrograman Mobile",
+    testimonial:
+      "Belajar membuat aplikasi mobile ternyata tidak sesulit yang saya kira. Terima kasih kepada para mentor yang selalu siap membantu.",
     rating: 5,
-    date: "2024-05-15"
+    name: "Andi Wijaya",
   },
   {
-    name: "Dedi Kurniawan",
-    course: "Machine Learning untuk Pemula",
-    testimonial: "Kursus ini memberikan dasar yang kuat untuk memahami machine learning. Saya sekarang lebih percaya diri untuk melanjutkan ke level berikutnya.",
+    course: "Kursus Pemrograman Dasar",
+    testimonial:
+      "Saya suka metode pengajaran di sini. Sangat interaktif dan tidak membosankan. Saya merasa lebih percaya diri dalam memahami konsep-konsep dasar pemrograman. Instruktur juga selalu siap membantu kapan pun saya menemui kesulitan.",
     rating: 4,
-    date: "2024-05-17",
+    name: "Lina Marlina",
     col_span: true,
   },
   {
-    name: "Andi Pratama",
-    course: "Belajar Pemrograman JavaScript",
-    testimonial: "Kursus ini sangat membantu saya memahami dasar-dasar JavaScript. Instruktur menjelaskan materi dengan sangat jelas dan praktis.",
+    course: "Kursus Pemrograman Web",
+    testimonial:
+      "Sekarang saya bekerja sebagai web developer berkat kursus ini. Materinya sangat relevan dengan pekerjaan saya.",
     rating: 5,
-    date: "2024-05-10"
+    name: "Rina Dewi",
   },
   {
-    name: "Budi Santoso",
-    course: "Desain Web Responsif",
-    testimonial: "Saya sangat senang mengikuti kursus ini. Materinya sangat relevan dan langsung bisa diterapkan dalam proyek saya.",
+    course: "Kursus Pemrograman Mobile",
+    testimonial: "Kursus yang luar biasa! Saya bisa membuat aplikasi mobile untuk bisnis saya sendiri.",
     rating: 4,
-    date: "2024-05-12"
+    name: "Teguh Prasetyo",
   },
   {
-    name: "Citra Dewi",
-    course: "Analisis Data dengan Python",
-    testimonial: "Instruktur sangat berpengalaman dan memberikan banyak contoh nyata yang membantu saya memahami konsep analisis data dengan lebih baik.",
+    course: "Kursus Pemrograman Dasar",
+    testimonial:
+      "Kursus ini memberikan dasar yang kuat bagi saya untuk melanjutkan belajar ke level yang lebih tinggi. Sekarang, saya merasa siap untuk belajar bahasa pemrograman yang lebih kompleks.",
     rating: 5,
-    date: "2024-05-15",
-    col_span: true
+    name: "Ahmad Fauzi",
+    col_span: true,
   },
 ];
 

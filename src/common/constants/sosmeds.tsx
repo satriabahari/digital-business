@@ -1,28 +1,36 @@
-const SOSMEDS = [
+import type { SosmedProps } from "../types/sosmed";
+
+export const SOSMEDS: SosmedProps[] = [
   {
-    name: 'Github',
-    link: 'https://github.com/satriabahari',
+    title: "Gmail",
+    href: "mailto:satriaabaharii@gmail.com",
+    icon: "gmail",
+    isShow: true,
   },
   {
-    name: 'Github',
-    link: 'https://github.com/satriabahari',
+    title: "Instagram",
+    href: "https://www.instagram.com/satriabaharii_/",
+    icon: "instagram",
+    isShow: true,
   },
   {
-    name: 'Github',
-    link: 'https://github.com/satriabahari',
+    title: "Linkedin",
+    href: "https://www.linkedin.com/in/satria-bahari/",
+    icon: "linkedin",
+    isShow: true,
   },
   {
-    name: 'Github',
-    link: 'https://github.com/satriabahari',
+    title: "Tiktok",
+    href: "https://www.tiktok.com/@satriaabaharii/",
+    icon: "tiktok",
+    isShow: true,
   },
   {
-    name: 'Github',
-    link: 'https://github.com/satriabahari',
+    title: "Github",
+    href: "https://github.com/satriabahari",
+    icon: "github",
+    isShow: true,
   },
-  {
-    name: 'Github',
-    link: 'https://github.com/satriabahari',
-  },
-]
+];
 
 export default SOSMEDS;
