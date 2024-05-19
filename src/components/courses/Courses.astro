@@ -1,95 +1,91 @@
 ---
-import Container from "../elements/Container.astro";
+import { FaCircleCheck } from "react-icons/fa6";
+import { Icon } from "astro-icon/components";
+
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { COURSES } from "@/common/constants/courses";
+
+import Container from "../elements/Container.tsx";
 import PageHeading from "../elements/PageHeading.astro";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card";
-import { FaCircleCheck } from "react-icons/fa6";
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils";
-
-const COURSES = [
-  {
-    price: 79,
-    label: 'Core',
-    title: 'Most popular plan',
-    benefits:[
-      'All stater features',
-      '1TB Additional storages',
-      'Unlimited projects',
-      'Analytic'
-    ],
-  },
-  {
-    price: 79,
-    label: 'Overdrive',
-    title: 'Most popular plan',
-    benefits:[
-      'All stater features',
-      '1TB Additional storages',
-      'Unlimited projects',
-      'Analytic'
-    ],
-    promotion: 'Limited time offer'
-  },
-  {
-    price: 79,
-    label: 'Team',
-    title: 'Most popular plan',
-    benefits:[
-      'All stater features',
-      '1TB Additional storages',
-      'Unlimited projects',
-      'Analytic'
-    ]
-  },
-]
 ---
 
-<Container id="courses" className='flex flex-col justify-center items-center gap-y-16'>
+<Container
+  client:idle
+  data-aos="fade-up"
+  isScreen
+  id="courses"
+  className="flex flex-col items-center justify-center gap-y-8"
+>
   <PageHeading>Courses</PageHeading>
-  <div class="grid lg:grid-cols-2 grid-cols-1 relative items-center gap-x-72 gap-y-12 w-full">
-  {COURSES.map((course, index) => (
-
-    <Card className={cn("relative flex flex-col justify-center items-center text-center border-[1.5px] dark:bg-neutral-800 dark:border-neutral-200 rounded-3xl", index === 1 && "lg:absolute -translate-x-1/2 left-1/2 z-10 lg:w-[350px]")}>
-      <div class="rounded-full border-neutral-200 border-[1.5px] p-1 bg-neutral-800 w-fit absolute -top-4 left-1/2 -translate-x-1/2">
-        <div class="bg-neutral-700 rounded-full p-3 text-neutral-50">
-          <FaCircleCheck size={25}/>
-        </div>
-      </div>
-      <CardHeader className={cn("mt-11 flex items-center", index !== 1 && "border-b-[1.5px] border-neutral-800")}>
-        <div class="border-neutral-500 border-[1.5px] rounded-full py-1 mb-4 text-[10px] uppercase font-medium tracking-[3px] w-fit px-3 ">
-          {course.label}
-        </div>
-        <CardTitle className="text-5xl font-bold">
-          ${course.price}
-        </CardTitle>
-        <CardDescription>
-          {course.title}
-        </CardDescription>
-      </CardHeader>
-      <CardContent className={cn(" w-full p-8 flex justify-center", index === 1 && 'dark:bg-neutral-700 bg-neutral-200' )}>
-        <ul class="space-y-2">
-          {course.benefits.map((benefit) => (
-            <li class="flex gap-x-4 items-center">
-              <div class="rounded-lg p-1.5 bg-neutral-700 w-fit text-neutral-50"><FaCircleCheck size={12}/></div>
-              <p class="text-sm">{benefit}</p>
-            </li>
-          ))}
-        </ul>
-      </CardContent>
-      <CardFooter  className={cn(" w-full flex justify-center", index === 1 && 'dark:bg-neutral-700 bg-neutral-200 flex flex-col gap-y-4 rounded-b-3xl' )}>
-        <Button className="dark:bg-neutral-700 space-x-3 rounded-lg px-3">
-          <div class="bg-neutral-900 rounded-md p-1">
-            <FaCircleCheck size={13} className="text-neutral-50"/>
+  <div class="relative grid w-full grid-cols-1 items-center gap-x-72 gap-y-12 lg:grid-cols-2">
+    {
+      COURSES.map((course, index) => (
+        <Card
+          className={cn(
+            "relative flex flex-col items-center justify-center rounded-3xl border-[1.5px] text-center dark:border-primary dark:bg-dark-tertiary",
+            index === 1 && "left-1/2 z-10 -translate-x-1/2 lg:absolute lg:w-[350px]",
+          )}
+        >
+          <div class="absolute -top-4 left-1/2 w-fit -translate-x-1/2 rounded-full border-[1.5px] border-neutral-200 bg-dark-tertiary p-1 dark:border-primary">
+            <div class="rounded-full bg-neutral-700 p-3 text-neutral-50 dark:bg-dark-secondary">
+              <Icon name={course.icon} />
+            </div>
           </div>
-          <p class="dark:text-neutral-50 font-semibold text-xs">GET STARTED</p>
-        </Button>
-        {course.promotion && (
-          <p class="text-xs font-medium">
-            - {course.promotion} - 
-          </p>
-        )}
-      </CardFooter>
-    </Card>
-  ))}
+          <CardHeader
+            className={cn(
+              "mt-11 flex items-center",
+              index !== 1 && "border-b-[1.5px] border-neutral-800 dark:border-primary",
+            )}
+          >
+            <div class="mb-4 w-fit rounded-full border-[1.5px] border-neutral-500 px-3 py-1 text-[10px] font-medium uppercase tracking-[3px] dark:border-primary ">
+              {/* {course.label} */}
+              test
+            </div>
+            <CardTitle className="text-3xl font-bold">{course.price}</CardTitle>
+            <CardDescription>{course.title}</CardDescription>
+          </CardHeader>
+          <CardContent
+            className={cn(" flex w-full justify-center p-8", index === 1 && "bg-neutral-200 dark:bg-secondary")}
+          >
+            <ul class="space-y-2">
+              {course.advantages.map((advantage) => (
+                <li class="flex items-center gap-x-4">
+                  <div
+                    class={cn(
+                      "w-fit rounded-lg bg-neutral-700 p-1.5 text-neutral-50 dark:bg-secondary",
+                      index === 1 && "dark:bg-dark-tertiary",
+                    )}
+                  >
+                    <FaCircleCheck size={12} />
+                  </div>
+                  <p class="text-sm">{advantage}</p>
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+          <CardFooter
+            className={cn(
+              " flex w-full justify-center",
+              index === 1 && "flex flex-col gap-y-4 rounded-b-3xl bg-neutral-200 dark:bg-secondary",
+            )}
+          >
+            <Button
+              className={cn(
+                "space-x-3 rounded-lg px-3 dark:bg-secondary  dark:hover:bg-dark-secondary",
+                index === 1 && "dark:bg-dark-tertiary dark:hover:bg-dark-secondary ",
+              )}
+            >
+              <div class="rounded-md bg-neutral-900 p-1 dark:bg-dark-tertiary dark:text-neutral-50">
+                <Icon name={course.icon} />
+              </div>
+              <p class="text-xs font-semibold dark:text-neutral-50">GET STARTED</p>
+            </Button>
+            {course.promotion && <p class="text-xs font-medium">- {course.promotion} -</p>}
+          </CardFooter>
+        </Card>
+      ))
+    }
   </div>
 </Container>
