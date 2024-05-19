@@ -1,11 +1,11 @@
 ---
 import MenuItemList from "./MenuItemList";
 import ThemeToggleButton from "./ThemeToggleButton";
-
-
 ---
 
-<nav class="py-3 px-6 rounded-full bg-white dark:bg-neutral-800 m-auto fixed lg:flex top-6 left-1/2 -translate-x-1/2 z-[999] hidden border-[1.5px] dark:border-neutral-600 border-neutral-300 gap-x-6 items-center">
-  <MenuItemList/>
-  <ThemeToggleButton client:idle/>
+<nav
+  class="fixed left-1/2 top-6 z-[999] m-auto hidden -translate-x-1/2 items-center gap-x-6 rounded-full border-[1.5px] border-neutral-300 bg-white px-6 py-3 dark:border-primary dark:bg-dark-tertiary/30 backdrop-blur-3xl lg:flex"
+>
+  <MenuItemList />
+  <ThemeToggleButton client:idle />
 </nav>

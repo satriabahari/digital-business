@@ -22,7 +22,7 @@ const ThemeToggleButton = () => {
 	}
 
 	return (
-		<Button variant="outline" size="icon" onClick={toggleTheme} className="rounded-full dark:hover:bg-neutral-900 dark:bg-neutral-700 dark:text-neutral-50">
+		<Button variant="outline" size="icon" onClick={toggleTheme} className="rounded-full dark:hover:bg-neutral-900 dark:bg-secondary dark:text-neutral-50">
 			{theme === 'light' ? (
 				<Sun className="h-[1.2rem] w-[1.2rem]" />
 			) : (
