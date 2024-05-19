@@ -12,13 +12,11 @@ export type InitialModalAction = {
   toggleMenu(): void;
 };
 
-export const useMenu = create<InitialModalState & InitialModalAction>()(
-  (set) => ({
-    isActive: "Home",
-    setIsActive: (title) => set({ isActive: title }),
-    isOpen: false,
-    showMenu: () => set({ isOpen: true }),
-    hideMenu: () => set({ isOpen: false }),
-    toggleMenu: () => set((prev) => ({ isOpen: !prev.isOpen })),
-  })
-);
+export const useMenu = create<InitialModalState & InitialModalAction>()((set) => ({
+  isActive: "Home",
+  setIsActive: (title) => set({ isActive: title }),
+  isOpen: false,
+  showMenu: () => set({ isOpen: true }),
+  hideMenu: () => set({ isOpen: false }),
+  toggleMenu: () => set((prev) => ({ isOpen: !prev.isOpen })),
+}));
