@@ -1,4 +1,5 @@
 ---
+import BackgroundGradient from "../elements/BackgroundGradient.astro";
 import Container from "../elements/Container.tsx";
 import PageHeading from "../elements/PageHeading.astro";
 import TestimonialList from "./TestimonialList.astro";
@@ -11,6 +12,7 @@ import TestimonialList from "./TestimonialList.astro";
   id="testimonials"
   className="flex flex-col items-center justify-center"
 >
+  <BackgroundGradient className="top-0 blur-[10rem]"/>
   <PageHeading>Testimonial</PageHeading>
   <TestimonialList />
 </Container>

@@ -3,12 +3,14 @@ import { Icon } from "astro-icon/components";
 
 import { MENUS } from "@/common/constants/menu";
 import SOSMEDS from "@/common/constants/sosmeds";
+import BackgroundGradient from "@/components/elements/BackgroundGradient.astro";
 ---
 
 <footer
   id="contact"
-  class="grid min-h-96 grid-cols-1 space-y-8 bg-white px-12 py-8 dark:bg-dark-tertiary lg:grid-cols-2 lg:px-28"
+  class="relative grid min-h-96 grid-cols-1 space-y-8 bg-white px-12 py-8 dark:bg-dark-tertiary lg:grid-cols-2 lg:px-28"
 >
+  <BackgroundGradient className="  bottom-0 right-0 z-10 blur-[11rem]" />
   <div class="flex flex-col justify-between space-y-4 text-center lg:text-left">
     <div class="flex flex-col justify-between gap-y-4">
       {

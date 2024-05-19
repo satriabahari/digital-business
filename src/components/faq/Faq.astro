@@ -4,9 +4,11 @@ import FAQS from "@/common/constants/faqs";
 import Container from "../elements/Container.tsx";
 import PageHeading from "../elements/PageHeading.astro";
 import FaqList from "./FaqList.tsx";
+import BackgroundGradient from "../elements/BackgroundGradient.astro";
 ---
 
 <Container client:idle data-aos="fade-up" id="faq" className="flex flex-col items-center justify-center">
+  <BackgroundGradient className="top-0 blur-[12rem]"/>
   <PageHeading>Faq</PageHeading>
   <FaqList faqs={FAQS} client:idle />
 </Container>

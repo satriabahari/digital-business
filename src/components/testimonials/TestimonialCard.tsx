@@ -10,7 +10,7 @@ const TestimonialCard = ({ name, course, testimonial, rating, col_span }: Testim
 
   return (
     <Card
-      className={cn("rounded-xl border-[1.5px] dark:border-primary dark:bg-dark-tertiary", col_span && "lg:col-span-2")}
+      className={cn("rounded-xl border-[1.5px] dark:border-primary dark:bg-dark-tertiary hover:scale-[1.03] transition duration-300", col_span && "lg:col-span-2")}
     >
       <CardHeader>
         <CardTitle className="text-xl dark:text-neutral-50">{course}</CardTitle>

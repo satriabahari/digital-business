@@ -22,7 +22,7 @@ const FaqList = ({ faqs }: FaqListProps) => {
           key={index}
           value={`item-${index}`}
           className={cn(
-            " rounded-xl border px-4 dark:border-primary dark:bg-dark-tertiary",
+            "hover:scale-[1.03] duration-300 transition rounded-xl border px-4 dark:border-primary dark:bg-dark-tertiary",
             isActive === index && "bg-white dark:bg-secondary",
           )}
         >

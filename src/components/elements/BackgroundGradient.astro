@@ -1,0 +1,7 @@
+---
+import { cn } from "@/lib/utils";
+
+const { className } = Astro.props;
+---
+
+<div class={cn("absolute -z-10 rounded-full bg-gradient-to-b blur-[15rem] h-52 w-52 dark:bg-sky-500", className)}></div>

@@ -9,6 +9,7 @@ import { COURSES } from "@/common/constants/courses";
 import Container from "../elements/Container.tsx";
 import PageHeading from "../elements/PageHeading.astro";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card";
+import BackgroundGradient from "../elements/BackgroundGradient.astro";
 ---
 
 <Container
@@ -18,13 +19,14 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
   id="courses"
   className="flex flex-col items-center justify-center gap-y-8"
 >
+  <BackgroundGradient className="top-0 blur-[12rem]" />
   <PageHeading>Courses</PageHeading>
   <div class="relative grid w-full grid-cols-1 items-center gap-x-72 gap-y-12 lg:grid-cols-2">
     {
       COURSES.map((course, index) => (
         <Card
           className={cn(
-            "relative flex flex-col items-center justify-center rounded-3xl border-[1.5px] text-center dark:border-primary dark:bg-dark-tertiary",
+            "relative flex flex-col items-center justify-center rounded-3xl border-[1.5px] text-center transition duration-300 hover:scale-[1.03] dark:border-primary dark:bg-dark-tertiary",
             index === 1 && "left-1/2 z-10 -translate-x-1/2 lg:absolute lg:w-[350px]",
           )}
         >
