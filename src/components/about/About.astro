@@ -1,38 +1,11 @@
 ---
-import Container from '../elements/Container.astro'
-import PageHeading from '../elements/PageHeading.astro'
-import AboutCard from './AboutCard.astro';
-
-const ABOUTS = [
-  {
-    title: 'Work smarter not harder',
-    label: 'Easy Integration',
-    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis officia nostrum porro dignissimos itaque dolorum architecto quia aperiam. Quidem, iste.',
-  },
-  {
-    title: 'Work smarter not harder',
-    label: 'Easy Integration',
-    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis officia nostrum porro dignissimos itaque dolorum architecto quia aperiam. Quidem, iste.',
-  },
-]
-
-const SUB_ABOUTS = [
-  {
-    title: 'Work smarter not harder',
-  },
-  {
-    title: 'ai automated video editing',
-  },
-  {
-    title: 'Work smarter not harder',
-  },
-  {
-    title: 'ai automated video editing',
-  },
-]
+import Container from "../elements/Container.tsx";
+import PageHeading from "../elements/PageHeading.astro";
+import AboutCard from "./AboutCard.astro";
 ---
 
-<Container id="about" className='flex flex-col justify-center items-center gap-y-4'>
+<Container client:idle data-aos="fade-up" id="about" className="flex flex-col items-center justify-center gap-y-4">
+  <div class="gradient"></div>
   <PageHeading>About</PageHeading>
-  <AboutCard/>
+  <AboutCard />
 </Container>

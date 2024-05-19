@@ -1,71 +1,47 @@
 ---
-import {
-  Card,
-  CardContent,
-CardFooter,
-} from "@/components/ui/card"
-import { Moon, Sun } from "lucide-react"
-import { SiAlacritty } from "react-icons/si";
-// import ABOUT from '@/common/constants/about'
+import { Icon } from "astro-icon/components";
 
-const ABOUTS = [
-  {
-    title: 'Work smarter not harder',
-    label: 'Easy Integration',
-    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis officia nostrum porro dignissimos itaque dolorum architecto quia aperiam. Quidem, iste.',
-  },
-  {
-    title: 'Work smarter not harder',
-    label: 'Easy Integration',
-    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis officia nostrum porro dignissimos itaque dolorum architecto quia aperiam. Quidem, iste.',
-  },
-]
-
-const SUB_ABOUTS = [
-  {
-    title: 'Work smarter not harder',
-  },
-  {
-    title: 'ai automated video editing',
-  },
-  {
-    title: 'Work smarter not harder',
-  },
-  {
-    title: 'ai automated video editing',
-  },
-]
+import { ABOUTS, SUB_ABOUTS } from "@/common/constants/about";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 ---
 
-<div class="">
-  <Card className='bg-white rounded-xl grid grid-cols-2 overflow-hidden dark:bg-neutral-800 border-[1.5px] border-neutral-300 dark:border-neutral-500'>
-    {ABOUTS.map((item) => {
-      return(
-        <CardContent className='pt-6 lg:px-20'>
-          <div class="rounded-full p-0.5 border-[1.5px] border-neutral-400 w-fit flex relative">
-            <div class="border-r-[1.5px] -top-12 left-1/2 -tranneutral-x-1/2 absolute h-12 border-neutral-300"/>
-            <div class="bg-neutral-800 p-[3px] rounded-full">
-              <Moon className="bg-neutral-700 text-neutral-50 rounded-full p-1" size={30}/>
+<div class="lg:px-32">
+  <Card
+    className="grid grid-cols-2 overflow-hidden rounded-xl border-[1.5px] border-neutral-300 bg-white dark:border-primary dark:bg-dark-tertiary"
+  >
+    {
+      ABOUTS.map((item) => {
+        return (
+          <CardContent className="pt-6 lg:px-20">
+            <div class="relative flex w-fit rounded-full border-[1.5px] border-neutral-400 p-0.5 dark:border-primary">
+              <div class="-tranneutral-x-1/2 absolute -top-12 left-1/2 h-12 border-r-[1.5px] border-neutral-300 dark:border-primary" />
+              <div class="rounded-full bg-neutral-800 p-[3px] text-neutral-50 dark:bg-dark-secondary ">
+                <Icon name={item.icon} />
+              </div>
             </div>
-          </div>
-          <h4 class="uppercase text-[.5rem] tracking-[2px] font-bold mt-6 text-blue-400">{item.label}</h4>
-          <h4 class="mt-2 font-semibold text-3xl dark:text-neutral-50 text-neutral-800">{item.title}</h4>
-          <p class="mt-2 text-sm dark:text-neutral-300 text-neutral-600">{item.description}</p>
-        </CardContent>
-      )}
-    )}
+            <h4 class="mt-6 text-[.5rem] font-bold uppercase tracking-[2px] text-blue-400">{item.label}</h4>
+            <h4 class="mt-2 text-2xl font-semibold text-neutral-800 dark:text-neutral-50 lg:text-3xl">{item.title}</h4>
+            <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400">{item.description}</p>
+          </CardContent>
+        );
+      })
+    }
 
     <div class="col-span-2">
-      <CardFooter className="grid grid-cols-2 lg:grid-cols-4 border-neutral-400 border-t-[1.5px] rounded-xl pt-6 gap-4">
-      {SUB_ABOUTS.map((item) => (
-        <div class="flex flex-col items-center justify-center gap-y-2">
-          <div class="rounded-full p-0.5 border-2 border-neutral-800  dark:border-neutral-400 w-fit flex relative">
-              <Moon className="bg-neutral-700 text-neutral-50 rounded-full p-1" size={30}/>
-          </div>
-          <p class="text-neutral-600 text-xs text-center dark:text-neutral-300">{item.title}</p>
-        </div>
-        ))}
-        </CardFooter>
+      <CardFooter
+        className="grid grid-cols-2 gap-6 rounded-xl border-t-[1.5px] border-neutral-400 pt-6 dark:border-primary lg:grid-cols-4"
+      >
+        {
+          SUB_ABOUTS.map((item) => (
+            <div class="flex flex-col items-center justify-center gap-y-2">
+              <div class="relative flex w-fit rounded-full  border-2 border-neutral-800 p-1 dark:border-dark-secondary dark:bg-dark-secondary">
+                <Icon name={item.icon} />
+              </div>
+              <p class="text-center text-xs text-neutral-600 dark:text-neutral-300">{item.title}</p>
+            </div>
+          ))
+        }
+      </CardFooter>
     </div>
-  </Card> 
-  </div>
+  </Card>
+</div>
