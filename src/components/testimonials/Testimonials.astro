@@ -1,10 +1,16 @@
 ---
-import Container from "../elements/Container.astro";
+import Container from "../elements/Container.tsx";
 import PageHeading from "../elements/PageHeading.astro";
 import TestimonialList from "./TestimonialList.astro";
 ---
 
-<Container id="testimonials" className="flex justify-center items-center flex-col">
+<Container
+  client:idle
+  data-aos="fade-up"
+  isScreen
+  id="testimonials"
+  className="flex flex-col items-center justify-center"
+>
   <PageHeading>Testimonial</PageHeading>
-  <TestimonialList/>
+  <TestimonialList />
 </Container>
